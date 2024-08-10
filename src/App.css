@@ -90,7 +90,7 @@
   padding: 10px;
   background-color: #232D3F;
 }
-.today h4{
+.today-{
   border-bottom: 1px solid #454849;
 }
 .sunrise{
@@ -126,6 +126,7 @@
 }
 
 .Hourly-weather{
+  height: 780px;
   position: absolute;
   width: max-content;
   right: 0;
@@ -134,22 +135,24 @@
   border-radius: 12px;
   padding: 10px;
   background-color: #232D3F;
+  overflow-y: scroll;
 }
 .hourly{
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 .humidity{
   display: flex;
-  gap: 5px;
+  /* gap: 3px; */
   align-items: center;
 }
 .time, .icon, .temp{
-  border-right: 2px solid #454849;
+  /* border-right: 2px solid #454849; */
 }
 
-.temperature{
+/* Temperature comp */
+.box{
   width: 60%;
   margin-top: 30px; 
   border: 1px solid #454849;
@@ -165,6 +168,9 @@
 .temp1-1{
   display: flex;
 }
+.temp2{
+  border-bottom: 1px solid #454849;
+}
 .celcius, .farenheit{
   display: flex;
   align-items: center;
@@ -176,9 +182,158 @@
   color:#c5c6c7ab;
   margin-bottom: 5px;
 }
+.temp3_{
+  
+  border-top: 1px solid #454849;
+}
+.temp3-{
+  display: flex;
+  gap: 50px;
+}
+
+/* Condition comp */
+.condition{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Hourly page */
+.hourly-{
+  display: grid;
+  gap:20px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  /* width: 400px;  */
+  border: 1px solid #454849;
+  border-radius: 12px;
+  padding: 10px;
+  background-color: #232D3F;
+}
+.hour{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #c5c6c7;
+  border-bottom: 1px solid #454849;
+}
+.accordian-{
+  /* width: 100%; */
+  display: flex;
+  justify-content: space-between;
+  /* background-color: red; */
+}
+.accordion-item {
+  background-color: #cfe2ff;
+}
+.accordion-button {
+  display: block;
+  background-color: #cfe2ff;
+  color: #022c65;
+  padding-bottom: 0px;
+}
+.accordion-button:focus{
+  box-shadow: none;
+}
+.time-icon-temp{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.time-h{
+  width: 70px;
+  margin-right: 10px;
+}
+.acc1{
+  width: 457px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #454849;
+  margin-bottom: 16px;
+}
+.condn-h-{
+  width: 48%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px;
+}
+.condn-h{
+  width: 48%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #454849;
+}
+.temp-h, .humidity-h, .icon-h{
+  width: 70px;
+}
+.icon-h{
+  height: 40px;
+  width: 40px;
+}
+.humidity-h{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  /* align-items: end; */
+}
+.acc2{
+  width: 457px;
+  display: flex;
+  justify-content: space-between;
+  /* border-bottom: 1px solid #454849 */
+}
+.acc2-{
+  padding-top: 10px;
+}
+.acc3{
+  display: flex;
+  justify-content: space-between;
+}
+.con{
+  height: 100%;
+}
+
+/* hourly detail */
+.hourlyDetail{
+  width: 80%;
+  color: #c5c6c7;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid #454849;
+}
+.hd{
+  border-bottom: 1px solid #454849;
+  padding: 10px;
+}
+.hd-{
+  display: flex;
+  justify-content: space-between;
+  background-color: #454849;
+  padding: 10px 5px 10px 5px;
+  margin-bottom: 2px;
+  border-radius: 12px;
+  color: #cfe2ff;
+}
+.hd- p{
+  margin-bottom: 0px;
+} 
 @media screen and (max-width: 770px) and (min-width: 570px){
   .Navbar{
     min-width: 700px !important;
     padding-left: 0px !important;
   }
+}
+
+.Hourly-weather::-webkit-scrollbar{
+  width: 5px;
+  position: static;
+}
+
+.Hourly-weather::-webkit-scrollbar-track{
+  background: inherit;
+  border-radius: 10px;
+}
+.Hourly-weather::-webkit-scrollbar-thumb{
+  background:#454849;
+  border-radius: 20px;
 }

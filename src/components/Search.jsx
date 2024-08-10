@@ -16,7 +16,7 @@ function Search(){
 
     const fetchForecastData= (location) =>{
         // const location= 'auto:ip'
-        const apikeyforecast= `${api}${forecastMethod}?key=${key}&q=${location}&days=1`
+        const apikeyforecast= `${api}${forecastMethod}?key=${key}&q=${location}&days=14`
         axios.get(apikeyforecast)
         .then((res)=>{
             setForecastData(res.data)

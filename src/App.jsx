@@ -7,6 +7,8 @@ import Today from './pages/Today';
 import Hourly from './pages/Hourly';
 import Daily from './pages/Daily';
 import Main from './components/Main'
+
+import HourlyDetail from './pages/HourlyDetail';
 import { ForecastProvider } from './pages/ForecastContext';
 // import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
 
@@ -28,6 +30,8 @@ function App() {
           {/* <Route path="/minutecast" element={<MinuteCast />} />
           <Route path="/monthly" element={<Monthly />} />
           <Route path="/air-quality" element={<AirQuality />} /> */}
+
+          <Route path='/hourlyDetail/:index' element={<HourlyDetail />} />
         </Routes>
       </ForecastProvider>
 

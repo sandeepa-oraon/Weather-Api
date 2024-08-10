@@ -3,29 +3,14 @@ import axios from "axios"
 import { ForecastContext } from '../pages/ForecastContext';
 
 import Temperature from "../components/today/Temperature"
+import Visibility from "../components/today/Visibility";
+import Wind from "../components/today/Wind";
+import Condition from "../components/today/Condition";
 // import ForecastData from "../components/ForecastData"
 
 function Today() {
     const { forecastData } = useContext(ForecastContext);
-    // const [today, setToday]=  useState(null)
-    
-    // const api= 'http://api.weatherapi.com/v1'
-    // const key= '1c091415b74446efaa6154754242907'
-    // const forecastMethod= '/forecast.json'
 
-    // const forecastToday = (location) =>{
-    //     const apikeyToday= `${api}${forecastMethod}?key=${key}&q=${location}`
-    //     axios.get(apikeyToday)
-    //     .then((res)=>{
-    //         if(res){
-    //             setToday(res.data)
-    //             console.log(res.data);
-    //         }
-    //     })
-    //     .catch((error)=>{
-    //         console.log('error fetching forecast data: ', error);
-    //     })
-    // }
     useEffect(()=>{
         // forecastToday('auto:ip')
         console.log('forecast Data in today: ', forecastData);
@@ -39,7 +24,10 @@ function Today() {
                     <div className="Thisday ">
                         <div className="sunmoon ">
                             <div className="today">
-                                <h4>Sun & Moon</h4>
+                                <div className="today-" style={{display:'flex', alignItem: 'center', justifyContent:'space-between'}}>
+                                    <h4>Sun & Moon</h4>
+                                    <h4>{forecastData.location.name}</h4>
+                                </div>
                                 <div className="sunrise">
                                     <div className="">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" className="bi bi-brightness-high" viewBox="0 0 16 16">
@@ -81,8 +69,11 @@ function Today() {
                                 </div>
                             </div>
                         </div>
-                        
+                        {/* <Condition forecastData={forecastData}></Condition> */}
                         <Temperature forecastData={forecastData}/>
+                        <Visibility forecastData={forecastData}/>
+                        <Wind forecastData={forecastData}/>
+
                         <div className="Hourly-weather ">
                         {forecastData.forecast.forecastday[0].hour.map((hourData, index) => (
                                 <div key={index} className={`${index} hourly`}>
