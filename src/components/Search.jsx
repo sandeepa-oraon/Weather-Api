@@ -9,7 +9,7 @@ function Search(){
     const { setForecastData } = useContext(ForecastContext);
     // const [forecastData, setForecastData]= useState(null)
 
-    const api= 'http://api.weatherapi.com/v1'
+    const api= 'https://api.weatherapi.com/v1'
     const key= '1c091415b74446efaa6154754242907'
     const weatherMethod= '/current.json'
     const forecastMethod= '/forecast.json'
