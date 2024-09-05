@@ -1,18 +1,26 @@
 import { useRef } from "react"
 import { useState } from "react"
 import axios from 'axios'
-import { useEffect } from "react"
+import { useEffect, useContext } from "react"
+import { ForecastContext} from '../pages/ForecastContext'
+
 import Carousels from "./Carousels"
+import Temperature from "./today/Temperature"
+import Visibility from "./today/Visibility"
+import Wind from "./today/Wind"
 
 import ForecastData from "./ForecastData"
 import Data from "./Data"
 
+import Today from "../pages/Today"
+
 
 function Main() {
     
+    const {forecastData}= useContext(ForecastContext)
     const [data, setData]= useState(null)
     const locationInput= useRef('')
-    const [forecastData, setForecastData]= useState(null)
+    const [forecastData1, setForecastData]= useState(null)
     // const [timeZoneData, setTimeZoneData]= useState(null)
 
     const api= 'http://api.weatherapi.com/v1'
@@ -20,20 +28,6 @@ function Main() {
     const weatherMethod= '/current.json'
     const forecastMethod= '/forecast.json'
 
-
-    const fetchForecastData= (location) =>{
-        // const location= 'auto:ip'
-        const apikeyforecast= `${api}${forecastMethod}?key=${key}&q=${location}`
-        axios.get(apikeyforecast)
-        .then((res)=>{
-            setForecastData(res.data)
-            console.log("Forecast data: ", res.data);
-        })
-    }
-    useEffect(()=>{
-        fetchForecastData('auto:ip')
-    },[])
-    
 
     const handleLocation = (location) => {
         const apiKeyWeather = `${api}${weatherMethod}?key=${key}&q=${location}`;
@@ -58,8 +52,6 @@ function Main() {
         console.log("data: ",data)
     }, [data])
 
-
-   
     return(
         <div className="main" style={{ maxWidth: '1880px'}}>
             <div className="forecast-data home">
@@ -74,14 +66,27 @@ function Main() {
                     </div>
                 )}
             </div>
-            <Carousels forecastData={forecastData}/>
-
-            <input type="text" ref={locationInput} placeholder="country" name="" id="" />
-            <button type="submit" onClick={()=> handleLocation(locationInput.current.value)}>Search</button>
-
-
-
-            <ForecastData forecastData={forecastData} setForecastData={setForecastData}/>           
+            <Carousels forecastData={forecastData1}/>
+            
+            {/* <ForecastData forecastData={forecastData} setForecastData={setForecastData}/>  */}
+            
+            {/* <Temperature forecastData={forecastData}/> */}
+            <div className="main-div">
+                {forecastData && (
+                    <div className="main-div-">
+                        <div className="flex-item">
+                            <Temperature forecastData={forecastData} />
+                        </div>
+                        <div className="flex-item">
+                            <Visibility forecastData={forecastData} />
+                        </div>
+                        <div className="flex-item">
+                            <Wind forecastData={forecastData} />
+                        </div>
+                        
+                  </div>
+                )}
+            </div>
             <Data data={data}/>
             
 

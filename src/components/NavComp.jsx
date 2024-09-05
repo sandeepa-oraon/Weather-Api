@@ -15,10 +15,10 @@ function NavComp() {
             <Nav.Link as={Link} to='/today'>TODAY</Nav.Link>
             <Nav.Link as={Link} to='/hourly'>HOURLY</Nav.Link>
             <Nav.Link as={Link} to='/daily'>DAILY</Nav.Link>
-            <Nav.Link href="#home">RADAR</Nav.Link>
+            {/* <Nav.Link href="#home">RADAR</Nav.Link>
             <Nav.Link href="#features">MINUTECAST</Nav.Link>
-            <Nav.Link href="#pricing">MONTHLY</Nav.Link>
-            <Nav.Link href="#home">AIR QUALITY</Nav.Link>
+            <Nav.Link href="#pricing">MONTHLY</Nav.Link> */}
+            <Nav.Link as={Link} to='/air-quality'>AIR QUALITY</Nav.Link>
             <Nav.Link href="#features"></Nav.Link>
 
             <Search />

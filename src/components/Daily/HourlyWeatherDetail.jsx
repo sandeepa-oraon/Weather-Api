@@ -1,24 +1,35 @@
-import { useContext } from "react"
 import { useParams } from "react-router-dom"
-import { ForecastContext } from "./ForecastContext"
+import { ForecastContext } from "../../pages/ForecastContext"
+import { useContext, useEffect, useState } from "react"
 
-function HourlyDetail() {
-    const { index }= useParams()
-    const { forecastData }= useContext(ForecastContext)
-
-    if (!forecastData) {
-        return <div>Loading...</div>
-    }
-    const hourData= forecastData.forecast.forecastday[0].hour[index]
-    return(
+function HourlyWeatherDetail () {
+    const {index, hourIndex}= useParams()
+    const {forecastData}= useContext(ForecastContext)
+    const [hourData, setHourData]= useState([])
+       
+    useEffect(()=>{
+        if(forecastData){
+            // console.log('forecastData', forecastData);
+            
+            const timeData= forecastData.forecast.forecastday[index].hour[hourIndex]
+            console.log('timeData', timeData);
+            setHourData(timeData)
+        }
+    },[ forecastData])
+    
+    useEffect(()=>{
+        console.log('hourData',hourData);
+    },[hourData])
+    
+    return (
         <>
-            <div className="hourlyDetail">
-                {/* <h2>Hourly Detail</h2> */}
+            {hourData && forecastData && (
+                <div className="hourlyDetail" style={{border:'1px solid #454849'}}>
                 <div>
                     <div className="hd hd-" style={{alignItems: 'center'}}>
                         <h3>{hourData.time}</h3>
-                        <img src={hourData.condition.icon} alt={hourData.condition.text} />
-                        <p>{hourData.condition.text}</p>
+                        <img src={forecastData.current.condition.icon} alt={forecastData.current.condition.text} />
+                        <p>{forecastData.current.condition.text}</p>
                     </div>
                     <div className="temp_hd hd">
                         <h4>Temperature </h4>
@@ -94,7 +105,9 @@ function HourlyDetail() {
                     </div>
                 </div>
             </div>
+            )}
+            
         </>
     )
 }
-export default HourlyDetail
+export default HourlyWeatherDetail

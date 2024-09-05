@@ -19,14 +19,14 @@ function Carousels({forecastData}) {
             <img
                     className="d-block w-60" style={{opacity:'0.5', height:'400px', margin:'0 auto',alignItems:'center'}}
                     src={day}
-                    alt="First slide"
+                    alt=" Sunny Day"
                 />
             <Carousel.Caption style={{color:'white'}}>
             {forecastData && forecastData.forecast && forecastData.forecast.forecastday && forecastData.forecast.forecastday[0] && (
                 <h1>{forecastData.forecast.forecastday[0].date}</h1>
             )}
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h3>SUNNY DAY</h3>
+            <p>It's so hot🥵.</p>
             </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -34,33 +34,32 @@ function Carousels({forecastData}) {
             <img
                     className="d-block" style={{opacity:'0.6', width:'750px', height:'400px', margin:'0 auto',alignItems:'center'}}
                     src={night}
-                    alt="Second slide"
+                    alt="night"
                 />
             <Carousel.Caption>
             {forecastData && forecastData.forecast && forecastData.forecast.forecastday && forecastData.forecast.forecastday[0] && (
                 <h1>{forecastData.forecast.forecastday[0].date}</h1>
             )}
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>Night</h3>
+            <p>Don't go out at night without any reason, it might be scary👻.</p>
             </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
                 <img
                     className="d-block w-60" style={{ opacity:'0.5', width:'750px', height:'400px', margin:'0 auto',alignItems:'center'}}
                     src={rain}
-                    alt="Third slide"
+                    alt="Third rain"
                 />
             {/* <ExampleCarouselImage text="Third slide" /> */}
             <Carousel.Caption>
             {forecastData && forecastData.forecast && forecastData.forecast.forecastday && forecastData.forecast.forecastday[0] && (
                 <h1>{forecastData.forecast.forecastday[0].date}</h1>
             )}
-            <h3>Third slide label</h3>
+            <h3>RAINING</h3>
             <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                Always carry umbrela when it's raining outside☔.
             </p>
             
-            <h1>hii</h1>
             </Carousel.Caption>
         </Carousel.Item>
         </Carousel>

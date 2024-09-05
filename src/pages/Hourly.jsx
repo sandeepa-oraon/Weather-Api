@@ -13,19 +13,19 @@ function Hourly() {
 
     useEffect(() => {
         if (forecastData) {
-            const currentTime = new Date();
-            console.log(currentTime);
+            // const currentTime = new Date();
+            // console.log(currentTime);
             
-            currentTime.setHours(currentTime.getHours() - 1); // Subtract 1 hour from current time
+            // currentTime.setHours(currentTime.getHours() - 1); // Subtract 1 hour from current time
             const filterForecast = [];
             const indexes = [];
             
             forecastData.forecast.forecastday[0].hour.forEach((hourData, index) => {
-                const forecastTime = new Date(hourData.time);
-                if (forecastTime >= currentTime) {
+                // const forecastTime = new Date(hourData.time);
+                // if (forecastTime >= currentTime) {
                     filterForecast.push(hourData);
                     indexes.push(index); // Store the original index. the index will we orginal array which not the one which start form 0
-                }
+                // }
             });
             
             setFilteredForecast(filterForecast);
@@ -41,7 +41,6 @@ function Hourly() {
 	return (
 			<>
 				<div className="hourly-">
-
 				{filteredForecast.map((hourData, index) => (
 					<div className="hour" key={index} >
 						<Accordion defaultActiveKey="0">
