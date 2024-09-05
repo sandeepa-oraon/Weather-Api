@@ -23,7 +23,7 @@ function Main() {
     const [forecastData1, setForecastData]= useState(null)
     // const [timeZoneData, setTimeZoneData]= useState(null)
 
-    const api= 'http://api.weatherapi.com/v1'
+    const api= 'https://api.weatherapi.com/v1'
     const key= '1c091415b74446efaa6154754242907'
     const weatherMethod= '/current.json'
     const forecastMethod= '/forecast.json'
