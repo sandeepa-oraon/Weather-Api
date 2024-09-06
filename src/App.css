@@ -220,6 +220,7 @@
 
 /* Hourly page */
 .hourly-{
+  width: 65vw;
   display: grid;
   gap:20px;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
@@ -230,9 +231,6 @@
   background-color: #232D3F;
 }
 .hour{
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
   color: #c5c6c7;
   border-bottom: 1px solid #454849;
 }
@@ -246,6 +244,7 @@
   background-color: #cfe2ff;
 }
 .accordion-button {
+  width: 100%;
   display: block;
   background-color: #cfe2ff;
   color: #022c65;
@@ -260,11 +259,11 @@
   gap: 10px;
 }
 .time-h{
-  width: 70px;
+  width: 20%;
   margin-right: 10px;
 }
 .acc1{
-  width: 457px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #454849;
@@ -283,11 +282,11 @@
   border-bottom: 1px solid #454849;
 }
 .temp-h, .humidity-h, .icon-h{
-  width: 70px;
+  width: 20%;
 }
 .icon-h{
-  height: 40px;
-  width: 40px;
+  /* height: 40px; */
+  /* width: 40px; */
 }
 .humidity-h{
   display: flex;
@@ -296,7 +295,7 @@
   /* align-items: end; */
 }
 .acc2{
-  width: 457px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   /* border-bottom: 1px solid #454849 */

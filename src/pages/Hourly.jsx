@@ -60,7 +60,7 @@ function Hourly() {
 											<h4 className="humid-h">{hourData.humidity}%</h4>{" "}
 										</div>
 									</div>
-									<div className="acc1">
+									<div className="acc1 ">
 										<div className="condn-h-">{hourData.condition.text}</div>
 										<div className="condn-h-"><p>Cloud Cover</p><div> {hourData.cloud}</div></div>
 									</div>
