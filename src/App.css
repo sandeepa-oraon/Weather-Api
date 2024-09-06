@@ -53,26 +53,14 @@
 
 /* main component */
 .main{
-/* background-color: red; */
- /* max-width:1500px; */
  margin-top: 30px;
  text-align: left;
  color: #cfe2ff;
-}
-.main-div{
-  /* width: 100%; */
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
 }
 .main-div-{
   width: 100%;
   margin-left: 20%;
   display: block;
-  /* justify-content: center; */
-}
-.flex-item{
-  /* margin: 0 auto; */
 }
 .flex-item-{
   position: absolute;
@@ -88,11 +76,6 @@
   height: 400px;
   width: 300px;
   background-color: red;
-}
-.home{
-  /* width: 50vw; */
-  /* margin: 0 auto; */
-  /* background-color: #fff; */
 }
 .Thisday{
   width: 900px;
@@ -129,9 +112,6 @@
 .moon div{
   margin-top: 4px;
 }
-.sun{
-  /* display: flex; */
-}
 .riseSet{
   display: flex;
   gap: 30px;
@@ -163,11 +143,7 @@
 }
 .humidity{
   display: flex;
-  /* gap: 3px; */
   align-items: center;
-}
-.time, .icon, .temp{
-  /* border-right: 2px solid #454849; */
 }
 
 /* Temperature comp */
@@ -224,7 +200,6 @@
   display: grid;
   gap:20px;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  /* width: 400px;  */
   border: 1px solid #454849;
   border-radius: 12px;
   padding: 10px;
@@ -235,10 +210,8 @@
   border-bottom: 1px solid #454849;
 }
 .accordian-{
-  /* width: 100%; */
   display: flex;
   justify-content: space-between;
-  /* background-color: red; */
 }
 .accordion-item {
   background-color: #cfe2ff;
@@ -284,21 +257,15 @@
 .temp-h, .humidity-h, .icon-h{
   width: 20%;
 }
-.icon-h{
-  /* height: 40px; */
-  /* width: 40px; */
-}
 .humidity-h{
   display: flex;
   align-items: center;
   justify-content: end;
-  /* align-items: end; */
 }
 .acc2{
   width: 100%;
   display: flex;
   justify-content: space-between;
-  /* border-bottom: 1px solid #454849 */
 }
 .acc2-{
   padding-top: 10px;
@@ -316,10 +283,6 @@
 .hourlyDetail{
   width: 100%;
   color: #c5c6c7;
-  /* margin: 0 auto; */
-  /* padding: 20px; */
-  /* border-radius: 20px; */
-  /* border: 1px solid #454849; */
 }
 .hd{
   border-bottom: 1px solid #454849;
